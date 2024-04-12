@@ -1,0 +1,6 @@
+/.vscode
+vendor/*
+composer.json
+.htaccess
+vendor/
+Conection.php

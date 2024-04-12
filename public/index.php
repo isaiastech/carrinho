@@ -20,5 +20,6 @@ $products = require'../app/helpers/products.php';
             <?php endforeach;?>
         </ul>
     </div>
+    et
 </body>
 </html>

@@ -16,7 +16,7 @@ $products = require'../app/helpers/products.php';
     <div class="container">
         <ul>
             <?php foreach ($products as $index => $product): ?>
-               <li><?php echo $product['name'] ?></li>
+               <li><?php echo $product['name'] ?> | R$ <?php echo number_format( $product['price'],2,',','.')?></li><a href="add.php?id=<?php echo $index?>">Add to cart</a>
             <?php endforeach;?>
         </ul>
     </div>

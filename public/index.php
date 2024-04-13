@@ -1,13 +1,15 @@
 <?php
-
-use app\class\Cart;
-
 session_start();
 require '../vendor/autoload.php';
 
+use app\class\Cart;
+use app\class\CartProducts;
+
+$cartProducts = new CartProducts(new Cart);
 $products = require'../app/helpers/products.php';
 
 $cart = new Cart;
+// $cart->quantity(6, 0);
 $productsInCart = $cart->cart();
 
 ?>

@@ -1,7 +1,14 @@
 <?php
+
+use app\class\Cart;
+
+session_start();
 require '../vendor/autoload.php';
 
 $products = require'../app/helpers/products.php';
+
+$cart = new Cart;
+$productsInCart = $cart->cart();
 
 ?>
 
@@ -14,6 +21,7 @@ $products = require'../app/helpers/products.php';
 </head>
 <body>
     <div class="container">
+        <h3>Cart: <?php echo count($productsInCart)?> |<a href="cart.php"> Go to Cart</a></h3>
         <ul>
             <?php foreach ($products as $index => $product): ?>
                <li><?php echo $product['name'] ?> | R$ <?php echo number_format( $product['price'],2,',','.')?></li><a href="add.php?id=<?php echo $index?>">Add to cart</a>

@@ -7,5 +7,5 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 $cart = new Cart;
 $cart->add($id);
 
-$cart->dump();
+header('Location:http://localhost/code/OB-carrinho/public/');
 ?>
